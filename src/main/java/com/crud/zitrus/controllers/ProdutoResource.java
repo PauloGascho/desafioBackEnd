@@ -9,6 +9,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/produtos")
+@CrossOrigin(origins = "http://localhost:8080")
 public interface ProdutoResource {
     @GetMapping
     List<Produto> listarProdutos();
