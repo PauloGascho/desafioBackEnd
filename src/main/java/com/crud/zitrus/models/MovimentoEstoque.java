@@ -20,7 +20,11 @@ public class MovimentoEstoque {
     @GeneratedValue
     UUID id;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(
+            name = "produto_id",
+            foreignKey = @ForeignKey(name = "movimentacao_estoque_produto")
+    )
     Produto produto;
 
     String tipo;

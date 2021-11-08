@@ -24,6 +24,8 @@ dependencies {
 
 	testCompileOnly 'org.projectlombok:lombok:1.18.22'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+	testImplementation group: 'io.rest-assured', name: 'spring-mock-mvc', version: '4.4.0'
 }
 
 test {

@@ -1,6 +1,8 @@
 package com.crud.zitrus.controllers;
 
 
+import com.crud.zitrus.models.ConsultaDeProdutos;
+import com.crud.zitrus.models.LucrosDoProduto;
 import com.crud.zitrus.models.Produto;
 import com.crud.zitrus.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,22 @@ public class ProdutoController implements ProdutoResource {
     @Override
     public Optional<Produto> detalharProduto(UUID produtoId) {
         return produtoRepository.findById(produtoId);
+    }
+
+    public Optional<Produto> getProdutoByCodigo(String codigo) {
+        return produtoRepository.findByCodigo(codigo);
+    }
+
+    public List<ConsultaDeProdutos> consultaProduto(String tipo) {
+        return produtoRepository.consultaProduto(tipo);
+    }
+
+    public List<LucrosDoProduto> listarLucros() {
+        return produtoRepository.listarLucros();
+    };
+
+    public List<String> buscarTipos() {
+        return produtoRepository.getTipos();
     }
 
     @Override

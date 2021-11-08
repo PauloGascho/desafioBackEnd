@@ -1,8 +1,6 @@
 package com.crud.zitrus.models;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.Entity;
@@ -17,6 +15,8 @@ import java.util.UUID;
 @Entity
 @Table(name="produto")
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
+@NoArgsConstructor
 public class Produto {
 
     @Id
